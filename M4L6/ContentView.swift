@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var selectedFood: String? = "pizza"
+    var selectedMenuItem: MenuItem?
+    var dangerousMenuItem: MenuItem!
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        if(selectedMenuItem != nil) {
+            Text(selectedMenuItem!.name)
         }
-        .padding()
+        
+        if let selectedMenuItem {
+            Text(selectedMenuItem.name)
+        }
+        
+        Text(selectedMenuItem?.name ?? "sushi")
     }
 }
 
